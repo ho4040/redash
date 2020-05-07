@@ -6,7 +6,6 @@ import { useDebouncedCallback } from "use-debounce";
 import useMedia from "use-media";
 import Button from "antd/lib/button";
 import Select from "antd/lib/select";
-import Tooltip from "antd/lib/tooltip";
 import routeWithUserSession from "@/components/ApplicationArea/routeWithUserSession";
 import Resizable from "@/components/Resizable";
 import Parameters from "@/components/Parameters";
@@ -214,15 +213,10 @@ function QuerySource(props) {
                       key={`ds-${ds.id}`}
                       value={ds.id}
                       data-name={ds.name}
+                      title={ds.description && ds.description}
                       data-test={`SelectDataSource${ds.id}`}>
                       <img src={`/static/images/db-logos/${ds.type}.png`} width="20" alt={ds.name} />
                       <span>{ds.name}</span>
-                      {
-                        ds.description &&
-                        <Tooltip placement="right" title={ds.description}>
-                          <i class="fa fa-question-circle info" />
-                        </Tooltip>
-                      }
                     </Select.Option>
                   ))}
                 </Select>
