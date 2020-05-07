@@ -233,13 +233,12 @@ export default function SchemaBrowser({ schema, dataSourceId, onRefresh, onItemS
         </Tooltip>
       </div>
       <div>
-        <Checkbox
+        {toggleString && <Checkbox
           className="m-t-10"
           checked={isStringToggled}
-          disabled={!toggleString}
           onChange={event => handleToggleChange(event.target.checked)}>
             Hide items with "{toggleString}" in name
-        </Checkbox>
+        </Checkbox>}
       </div>
       <div className="schema-browser">
         <AutoSizer>
